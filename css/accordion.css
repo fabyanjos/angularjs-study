@@ -1,0 +1,54 @@
+body {
+	 width: 40%; 
+	 margin-left: 25%;
+	 font-size: 14px;
+	 font-family: serif;
+	 text-align: justify;
+	 line-height: 1.5;
+}
+.col-1, .col-5, .col-6 {
+	width: 5%;
+}
+.col-5 {
+	background: url('/img/edit.png') no-repeat;
+}
+.col-6 {
+	background: url('/img/delete.png') no-repeat;
+}
+.priority-1 {
+	background: url('/img/priority-1.png') no-repeat;
+}
+.priority-2 {
+	background: url('/img/priority-2.png') no-repeat;
+}
+.priority-3 {
+	background: url('/img/priority-3.png') no-repeat;
+}
+.col-5, .col-6, .priority-1, .priority-2, .priority-3 {
+	background-size: 16px;
+	background-position: center;
+	color: black;
+	font-weight: bolder;
+}
+.col-2 {
+	width: 55%;
+}
+.col-3, .col4 {
+	width: 15%;
+}
+.list-table {
+	padding: 1em !important;
+}
+.list-table li span {
+	display: inline-block;
+	margin-top: 10px;
+	line-height: 1.5;
+}
+.ui-helper-reset {
+	line-height: 1.5 !important;
+}
+.input-sm, input[type="number"] {
+	width: 45px !important;
+	height: 28px !important;
+	padding: 2px 2px;
+}

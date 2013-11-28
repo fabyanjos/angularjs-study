@@ -1,0 +1,44 @@
+<html ng-app="app">
+ 
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/xeditable.js"></script>
+    <script src="js/accordion.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="css/xeditable.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/accordion.css">
+  </head>
+  <body>
+    <h2>Accordion</h2>
+    <ul id="accordion" ng-controller="AccordionCtrl">
+      <li ng-repeat="stock in stocks">
+        <h3>{{stock.category}}</h3>
+        <ul class="list-table">
+          <li ng-repeat="product in stock.products" class="view" id="product-{{product.id}}">
+            <span class="col-1 priority-{{product.priority}}">
+               <a href="#" editable-select="product.priority" buttons="no" e-ng-options="p.value as p.text for p in priorities" onbeforesave="updatePriority(product, $data)">
+                &nbsp;{{product.priority}}&nbsp;
+               </a>
+            </span>
+            <span class="col-2">{{product.name}}</span>
+            <span class="col-3">
+              <a href="#" editable-text="product.price" buttons="no" e-required e-placeholder="Enter price" onbeforesave="updatePrice(product, $data)">
+                  $ {{product.price}}
+              </a>
+            </span>
+            <span class="col-4">
+              <a href="#" editable-number="product.quantity" buttons="no" e-required e-placeholder="Enter quantity" onbeforesave="updateQuantity(product, $data)">
+                  {{product.quantity}}
+              </a>
+            </span>
+            <span class="col-5">&nbsp;</span>
+            <span class="col-6">&nbsp;</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>
